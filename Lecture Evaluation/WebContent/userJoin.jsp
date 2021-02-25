@@ -17,12 +17,12 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="./css/bootstrap.min.css">
 <link rel="stylesheet" href="./css/custom.css">
-	<!-- 제이쿼리 자바스크립트 추가하기 -->
-	<script src="./js/jquery.min.js"></script>
-	<!-- 파퍼 자바스크립트 추가하기 -->
-	<script src="./js/popper.js"></script>
-	<!-- 제이쿼리 자바스크립트 추가하기 -->
-	<script src="./js/bootstrap.min.js"></script>
+<!-- 제이쿼리 자바스크립트 추가하기 -->
+<script src="./js/jquery.min.js"></script>
+<!-- 파퍼 자바스크립트 추가하기 -->
+<script src="./js/popper.js"></script>
+<!-- 제이쿼리 자바스크립트 추가하기 -->
+<script src="./js/bootstrap.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -33,14 +33,14 @@
 		</button>
 		<div id="navbar-nav mr-auto">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a class="nav-link"
-					href="index.jsp">메인</a></li>
+				<li class="nav-item"><a class="nav-link" href="index.jsp">메인</a></li>
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle" id="dropdown"
 					data-toggle="dropdown"> 회원관리 </a>
 					<div class="dropdown-menu" aria-labelledby="dropdown">
-						<a class="dropdown-item" href="userLogin.jsp">로그인</a> <a class="dropdown-item active" 
-							href="userJoin.jsp">회원가입</a> <a class="dropdown-item" href="userLogout.jsp">로그아웃</a>
+						<a class="dropdown-item" href="userLogin.jsp">로그인</a> <a
+							class="dropdown-item active" href="userJoin.jsp">회원가입</a> <a
+							class="dropdown-item" href="userLogout.jsp">로그아웃</a>
 					</div></li>
 			</ul>
 			<form class="form-inline my-2 my-lg-0">
@@ -53,26 +53,25 @@
 	<section class="container mt-3" style="max-width: 560px;">
 		<form method="post" action="./userRegisterAction.jsp">
 			<div class="form-group">
-				<label>아이디</label>
-				<input type="text" name="userID" class="form-control">
+				<label>아이디</label> <input type="text" name="userID"
+					class="form-control">
 			</div>
 			<div class="form-group">
-				<label>비밀번호</label>
-				<input type="password" name="userPassword" class="form-control">
+				<label>비밀번호</label> <input type="password" name="userPassword"
+					class="form-control">
 			</div>
 			<div class="form-group">
-				<label>이메일</label>
-				<input type="email" name="userEmail" class="form-control">
+				<label>이메일</label> <input type="email" name="userEmail"
+					class="form-control">
 			</div>
 			<button type="submit" class="btn btn-primary">로그인</button>
 		</form>
-	
+
 	</section>
 
-	
+
 	<footer class="bg-dark mt-4 p-5 text-center" style="color: #FFFFF;">
-		Copyright &copy; 2020 semy song
-	</footer>
+		Copyright &copy; 2020 semy song </footer>
 
 </body>
 </html>

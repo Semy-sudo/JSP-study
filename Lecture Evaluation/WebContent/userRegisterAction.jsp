@@ -3,13 +3,14 @@
 <%@ page import="user.userDTO"%>
 <%@ page import="user.userDAO"%>
 <%@ page import="util.SHA256"%>
+<%@ page import="util.Gmail"%>
 <%@ page import="java.io.PrintWriter"%>
 <%
 	request.setCharacterEncoding("UTF-8");
 	String userID = null;
 	String userPassword = null;
 	String userEmail = null;
-	if(request.getParameter("userID") != null ) {
+	if(request.getParameter("userID") != null) {
 		userID = request.getParameter("userID");
 	}
 	if(request.getParameter("userPassword") != null) {
@@ -27,8 +28,8 @@
 		script.close();
 		return;
 	}
-	userDAO userDAO = new userDAO();
-	int result = userDAO.join(new userDTO(userID, userPassword, userEmail, SHA256.getSHA256(userEmail), userEmail));
+	userDAO userdao = new userDAO();
+	int result = userdao.join(new userDTO(userID, userPassword, userEmail, SHA256.getSHA256(userEmail), false));
 	if(result == -1){
 		PrintWriter script = response.getWriter();
 		script.println("<script>");

@@ -9,14 +9,14 @@ import util.DatabaseUtil;
 public class userDAO {
 	
 	public int login(String userID, String userPassword) {
-		String SQL="SELECT userPassword From USER WHERE userID=?";
+		String SQL="SELECT userPassword FROM USER WHERE userID=?";
 		Connection conn = null;
-		PreparedStatement pstmt = null;
+		PreparedStatement pstmt = null;//객체를 캐시에 담아 재사용
 		ResultSet rs = null;
 		try {
 			conn = DatabaseUtil.getConnection();
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1,userID);
+			pstmt.setString(1,userID);// 컬럼 바인ㄷ
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				if(rs.getString(1).equals(userPassword)) {
@@ -94,7 +94,7 @@ public class userDAO {
 			pstmt.setString(1,  userID);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
-				return rs.getBoolean(1);
+				return rs.getBoolean(1);//true
 			}
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -103,7 +103,7 @@ public class userDAO {
 			try { if(pstmt != null) pstmt.close();} catch(Exception e) {e.printStackTrace();}
 			try { if(rs != null) rs.close();} catch(Exception e) {e.printStackTrace();}
 		}
-		return false;//회원가입 실패
+		return false;//데이터 베이스 오류
 	}
 	
 	public boolean setUserEmailChecked(String userID) {
